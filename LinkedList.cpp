@@ -1,6 +1,6 @@
 #include "LinkedList.h"
 
-void LinkedList::push_front(int data) {
+void LinkedList::push_front(int data) { //push element to front of list (new header pointer)
 	Node* newNode = new Node(data);
 	if (headerPtr == NULL) { //list is empty
 		headerPtr = newNode;
@@ -14,7 +14,7 @@ void LinkedList::push_front(int data) {
 	}
 }
 
-void LinkedList::push_back(int data) {
+void LinkedList::push_back(int data) { //push element to back of list
 	Node* newNode = new Node(data);
 	if (headerPtr == NULL) { //list is empty
 		headerPtr = newNode;
@@ -31,7 +31,7 @@ void LinkedList::push_back(int data) {
 	numItems++;
 }
 
-void LinkedList::pop_front() {
+void LinkedList::pop_front() { //remove element from front of list
 	if (headerPtr == NULL) { //list is empty
 		cout << "pop_front attempted, but list was empty." << endl;
 		return;
@@ -71,7 +71,7 @@ void LinkedList::pop_back() {
 	numItems--;
 }
 
-int LinkedList::front() {
+int LinkedList::front() { //returns the header pointer of the list
 	if (headerPtr == NULL) {
 		return -1;
 	}
@@ -81,7 +81,7 @@ int LinkedList::front() {
 	
 }
 
-int LinkedList::back() {
+int LinkedList::back() { //returns the tail of the list
 	if (headerPtr == NULL) {
 		return -1;
 	}
@@ -90,7 +90,7 @@ int LinkedList::back() {
 	}
 }
 
-bool LinkedList::empty() {
+bool LinkedList::empty() { //returns a boolean (list empty (T) or not? (F))
 	if (headerPtr == NULL) {
 		return true;
 	}
@@ -99,7 +99,7 @@ bool LinkedList::empty() {
 	}
 }
 
-void LinkedList::insert(int index, int data) {
+void LinkedList::insert(int index, int data) { //insert user specified element at user specified index
 	Node* newNode = new Node(data);
 	if (headerPtr == NULL) { //list is empty, index does not matter, insert at beginning
 		headerPtr = newNode;
@@ -138,7 +138,7 @@ void LinkedList::insert(int index, int data) {
 
 }
 
-bool LinkedList::remove(int index) {
+bool LinkedList::remove(int index) { //remove element at user specified index
 	if (headerPtr == NULL) { //list is empty, item not removed, return false
 		cout << "remove attempted, but list was empty." << endl;
 		return false;
